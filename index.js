@@ -80,7 +80,7 @@ return movie.rated === rating
  */
 function findById(movies, id) { //looking at imdbid
   if (!movies.length){
-    throw 'Sorry, there are no movies avaiable.'
+    throw 'Sorry, there are no movies available.'
   }
   return movies.find(movie => movie.imdbID === id) || null
 }
@@ -89,7 +89,9 @@ function findById(movies, id) { //looking at imdbid
 /**
  * filterByGenre()
  * -----------------------------
- * Returns all movie objects with a matching genre. Case-insensitive. If the inputted `movies` array is empty, throw an error with a message. If no movies match the inputted `genre`, return `[]`.
+ * Returns all movie objects with a matching genre. Case-insensitive. 
+ * If the inputted `movies` array is empty, throw an error with a message. 
+ * If no movies match the inputted `genre`, return `[]`.
  * @param {Object[]} movies - An array of movies. See the `movies.js` file for an example of this array.
  * @param {string} genre - The genre of a movie. (e.g. "Fantasy")
  * @returns {Object[]|Error} An array of movies where at least one of the genres matches the `genre` inputted.
@@ -108,7 +110,14 @@ function findById(movies, id) { //looking at imdbid
  *  filterByGenre(movies, "Horror")
  *  //> []
  */
-function filterByGenre() {}
+
+    //NOTE: 'CASE SENSITIVE MEANS USE .toLowerCase or toUpperCase
+function filterByGenre(movies, genre) { //.genre
+  if (!movies.length){
+    throw 'Sorry, there are no movies available.'
+  }
+  return movies.filter(movie => movie.genre.toLowerCase().includes(genre.toLowerCase()))
+}
 
 /**
  * getAllMoviesReleasedAtOrBeforeYear()
