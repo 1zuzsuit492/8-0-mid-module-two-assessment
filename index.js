@@ -175,7 +175,20 @@ function getAllMoviesReleasedAtOrBeforeYear(movies, year) {//.released is a stri
       { "James and the Giant Peach": "91%" },
     ];
  */
-function getRottenTomatoesScoreByMovie() {}
+function getRottenTomatoesScoreByMovie(movies) {
+  //return an {}
+  //inside the obj = movie title and the value from the Rotten Tomatoes
+  //Rotten Tomatoes is inside of the ratings array
+  // ratings [ .source & .value ]
+  if (!movies.length){
+    throw 'Sorry, there are no movies available.'
+  }
+  return movies.map((movie) => { //map made the array and looped through it
+    let tomato = movie.ratings.find((rating) => rating.source === "Rotten Tomatoes");
+    //made a variable in order to see if source is really equal to rotten tomatoes, if it is then it's true
+  return { [movie.title]: tomato.value } //key value pair
+  })
+}
 
 // Do not change anything below this line.
 module.exports = {
