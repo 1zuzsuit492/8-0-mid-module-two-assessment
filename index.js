@@ -143,7 +143,13 @@ function filterByGenre(movies, genre) { //.genre
       }
     ];
  */
-function getAllMoviesReleasedAtOrBeforeYear() {}
+function getAllMoviesReleasedAtOrBeforeYear(movies, year) {//.released is a string. yr is already a number
+  if (!movies.length){
+    throw 'Sorry, there are no movies available.'
+  }
+  return movies.filter(movie => Number(movie.released.slice(-4)) <= year)
+}
+
 
 /**
  * getRottenTomatoesScoreByMovie()
