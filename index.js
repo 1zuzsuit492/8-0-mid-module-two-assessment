@@ -30,15 +30,20 @@ const exampleMovies = require("./movies");
       "James and the Giant Peach",
     ];
  */
-function getAllMovieTitles() {}
+function getAllMovieTitles(movies) {
+  if(!movies.length) throw 'Sorry, there are no movies available.'
+  return movies.map(movie => movie.title)
+}
 
 /**
  * checkIfAnyMovieHasRating()
  * -----------------------------
- * Returns a boolean, representing whether or not any of the movies has been given the provided rating. If the inputted `movies` array is empty, throw an error with a message.
+ * Returns a boolean, representing whether or not any of the movies has been given the provided rating. 
+ * If the inputted `movies` array is empty, throw an error with a message.
  * @param {Object[]} movies - An array of movies. See the `movies.js` file for an example of this array.
  * @param {string} [rating="G"] - A movie rating. Defaults to "G".
- * @returns {boolean|Error} Returns `true` if a movie exists in the list with the given rating, otherwise returns `false`.
+ * @returns {boolean|Error} Returns `true` if a movie exists in the list with the given rating, 
+ * otherwise returns `false`.
  *
  * NOTE: You must use the `.some()` method.
  *
@@ -50,7 +55,9 @@ function getAllMovieTitles() {}
  *  checkIfAnyMovieHasRating(movies, "R");
  *  //> false
  */
-function checkIfAnyMovieHasRating() {}
+function checkIfAnyMovieHasRating(movies) {
+  if(!movies.length) throw 'Sorry, there are no movies available.'
+}
 
 /**
  * findById()
