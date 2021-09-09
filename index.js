@@ -79,12 +79,12 @@ return movie.rated === rating
     };
  */
 function findById(movies, id) { //looking at imdbid
-  if(!movies.length) throw 'Sorry, there are no movies available.'
-  if(!movies.imbdID){
-    return null
+  if (!movies.length){
+    throw 'Sorry, there are no movies avaiable.'
   }
-  return movies.find((movie) =>{})
+  return movies.find(movie => movie.imdbID === id) || null
 }
+
 
 /**
  * filterByGenre()
