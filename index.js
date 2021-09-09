@@ -26,7 +26,7 @@ const exampleMovies = require("./movies");
       "How to Train Your Dragon",
       "Paddington",
       "The Lion King",
-      "Fantasia",
+      "Fantasia", 
       "James and the Giant Peach",
     ];
  */
